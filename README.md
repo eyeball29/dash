@@ -50,16 +50,6 @@ line 42
 #### Remove the "volatile" keyword
 */qt-gstreamer/elements/gstqtvideosink/gstqtvideosinkplugin.h 
 line 30
-### 2. Install error temp fixes
-####Update this file:
-*/aasdk/src/Transport/SSLWrapper.cpp
-Comment out 
-`FIPS_mode_set(0);`
-line 42
-
-#### Remove the "volatile" keyword
-*/qt-gstreamer/elements/gstqtvideosink/gstqtvideosinkplugin.h 
-line 30
 
 ## Updating Gauge on Vehicle Tab
 */dash/src/obd/command.cpp
@@ -79,24 +69,4 @@ Example - percentage:
 */dash/include/obd/command.hpp
 Add 
 */dash/src/app/pages/vehicle.cpp
-
-## Updating Gauge on Vehicle Tab
-*/dash/src/obd/command.cpp
-Example:
-`{"Intake Air Temperature", QCanBusFrame(0x7df, QByteArray::fromHex("02010F0000000000")), temp}`
-Alter desired cmd with appropriate data:
-1. title (e.g. - Intake Air Temperature)
-2. hex value
-3. decoder value (e.g. - temp) - if using others than are noted in decoders.hpp, see update section on this.
-
-*dash//include/obd/decoders.hpp
-Example - percentage:
-`double percentage(Response resp) { return (100.0 / 255.0) * (int)resp.data.at(0); }`
-1. double value = percentage
-2. {(100/255)*A} = OBDII table formula for this PID
-
-*/dash/include/obd/command.hpp
-Add 
-*/dash/src/app/pages/vehicle.cpp
-
 
