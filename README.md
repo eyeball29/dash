@@ -57,11 +57,11 @@ Comment out
 `FIPS_mode_set(0);`
 line 42
 
-####Remove the "volatile" keyword
+#### Remove the "volatile" keyword
 */qt-gstreamer/elements/gstqtvideosink/gstqtvideosinkplugin.h 
 line 30
 
-##Updating Gauge on Vehicle Tab
+## Updating Gauge on Vehicle Tab
 */dash/src/obd/command.cpp
 Example:
 `{"Intake Air Temperature", QCanBusFrame(0x7df, QByteArray::fromHex("02010F0000000000")), temp}`
