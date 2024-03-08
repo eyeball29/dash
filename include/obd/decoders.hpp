@@ -2,6 +2,8 @@
 
 #include <obd/message.hpp>
 
+/*values can be used for multiple commands*/
+
 double percentage(Response resp) { return (100.0 / 255.0) * (int)resp.data.at(0); }
 
 double temp(Response resp) { return (int)resp.data.at(0) - 40; }
@@ -12,3 +14,4 @@ double speed(Response resp) { return (int)resp.data.at(0); }
 
 double flow(Response resp) { return ((256.0 * (int)resp.data.at(0)) + (int)resp.data.at(1)) / 100.0; }
 
+double pressure(Response resp) { return (int)resp.data.at(0); }
